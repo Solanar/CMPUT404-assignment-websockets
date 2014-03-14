@@ -283,17 +283,9 @@ function wsSetup() {
 wsSetup();
 
 function addMessage( msg ) {
-    if ("world" in msg) {
-        for (var key in msg["world"]) {
-            data = msg["world"][key];
-            world[key] = data;
-        }
-    } else {
-        // because javascript it hard and this works
-        for (var key in msg) {
-            var data = msg[key];
-            world[key] = data;
-        }
+    for (var key in msg) {
+        var data = msg[key];
+        world[key] = data;
     }
     drawNextFrame();
 };

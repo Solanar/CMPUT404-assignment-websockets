@@ -112,7 +112,7 @@ def read_ws(ws, client):
             #print "WS RECV: %s" % msg
             if (msg is not None):
                 if (msg == "World"):
-                    packet = {"world": myWorld.world()}
+                    packet = myWorld.world()
                     #print ("Sending world", packet)
                     client.put(json.dumps(packet))
                     print ("Sent world")
